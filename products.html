@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartRetail | Products</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <h2>🛒 SmartRetail</h2>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="login.html" id="loginLink">Login</a>
+        <a href="#" id="logoutBtn" style="display:none;">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2>Browse Our Products</h2>
+    <div style="display:flex; gap:10px; margin-top:15px;">
+      <input type="text" id="searchBox" placeholder="Search by name..." onkeyup="filterProducts()">
+      <select id="categoryFilter" onchange="filterProducts()">
+        <option value="">All Categories</option>
+        <option value="Fruits">Fruits</option>
+        <option value="Vegetables">Vegetables</option>
+        <option value="Spices">Spices</option>
+        <option value="Millets">Millets</option>
+      </select>
+    </div>
+
+    <div class="product-grid" id="productList">
+    </div>
+  </div>
+
+  <footer><p>© 2026 SmartRetail. All Rights Reserved.</p></footer>
+  
+  <script src="js/data.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
