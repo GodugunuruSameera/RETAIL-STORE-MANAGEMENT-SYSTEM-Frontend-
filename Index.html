@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartRetail | Home</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <h2>🛒 SmartRetail</h2>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="products.html">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html" id="loginLink">Login/Signup</a>
+        <a href="#" id="logoutBtn" style="display:none;">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero">
+      <h1>Welcome to SmartRetail</h1>
+      <p>Your one-stop shop for fresh fruits, vegetables, spices, and millets.</p>
+      <button style="width:200px; margin-top:20px; background:var(--secondary); color:#000;" onclick="window.location.href='products.html'">Shop Now</button>
+    </div>
+
+    <h2>🌟 Today's Featured Offers</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6fac6?w=300" alt="Apple">
+        <h3>Fresh Apples</h3>
+        <p><del>₹150</del> <strong style="color:var(--primary);">₹120 / kg</strong></p>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300" alt="Millets">
+        <h3>Organic Bajra</h3>
+        <p><del>₹110</del> <strong style="color:var(--primary);">₹90 / kg</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 SmartRetail. All Rights Reserved.</p>
+    <div class="social-icons"><span>Facebook</span> | <span>Instagram</span> | <span>Twitter</span></div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
