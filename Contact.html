@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us | SmartRetail</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <h2>🛒 SmartRetail</h2>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; align-items: flex-start; margin-top: 20px;">
+    
+    <div class="form-box" style="flex: 1; min-width: 300px; margin: 0;">
+      <h2 style="text-align:center; margin-bottom:10px;">Message Us</h2>
+      <p id="contactMsg" class="message"></p>
+      <form id="contactForm" onsubmit="handleContact(event)">
+        <input type="text" id="cname" placeholder="Your Name">
+        <input type="email" id="cemail" placeholder="Your Email">
+        <textarea id="cmsg" rows="4" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <div class="team-contacts" style="flex: 1; min-width: 300px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+      <h2 style="color: var(--primary); margin-bottom: 15px; border-bottom: 2px solid #ddd; padding-bottom: 10px;">Our Team Contacts</h2>
+      <p style="margin-bottom: 15px; color: #555;">You can also reach out directly to our management team:</p>
+      
+      <ul style="list-style: none; line-height: 2; font-size: 1.1rem;">
+        <li>📞 <strong>Sameera:</strong> +91 8309331261</li>
+        <li>📞 <strong>Siddu:</strong> +91 7862873681</li>
+        <li>📞 <strong>Sindhu:</strong> +91 6382834712</li>
+        <li>📞 <strong>Salma:</strong> +91 7325146251</li>
+        <li style="margin-top: 10px; color: var(--primary);">🏪 <strong>Store Hotline:</strong> +91 9763532323</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Contact Email: support@smartretail.com | Primary Phone: 9763532323</p>
+  </footer>
+  <script src="js/contact.js"></script>
+</body>
+</html>
