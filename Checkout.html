@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartRetail | Checkout</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container" style="max-width: 600px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <h2 style="text-align:center; color:var(--primary);">🧾 Final Bill</h2>
+    <hr style="margin: 15px 0;">
+    <div id="billContent"></div>
+    <hr style="margin: 15px 0;">
+    <div style="display:flex; gap:10px;">
+      <button onclick="window.print()">🖨️ Print Bill</button>
+      <button class="btn-danger" onclick="finishOrder()">🏠 Return to Home</button>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script>
+    function generateBill() {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let billDiv = document.getElementById("billContent");
+      
+      if(cart.length === 0) {
+        billDiv.innerHTML = "<p>No items to bill.</p>";
+        return;
+      }
+
+      let html = "<ul style='list-style:none;'>";
+      let subtotal = 0;
+
+      cart.forEach(item => {
+        let p = products.find(x => x.id === item.id);
+        let itemTotal = p.price * item.weight * item.qty;
+        subtotal += itemTotal;
+        html += `<li style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                   <span>${p.name} (${item.weight}kg x ${item.qty})</span>
+                   <span>₹${itemTotal}</span>
+                 </li>`;
+      });
+
+      let tax = subtotal * 0.05;
+      let total = subtotal + tax;
+
+      html += `</ul><br>
+               <div style="text-align:right;">
+                 <p>Subtotal: ₹${subtotal.toFixed(2)}</p>
+                 <p>Tax (5%): ₹${tax.toFixed(2)}</p>
+                 <h3>Grand Total: ₹${total.toFixed(2)}</h3>
+               </div>`;
+      billDiv.innerHTML = html;
+    }
+
+    function finishOrder() {
+      localStorage.removeItem("cart"); // Clear cart after order
+      window.location.href = "index.html";
+    }
+
+    generateBill();
+  </script>
+</body>
+</html>
